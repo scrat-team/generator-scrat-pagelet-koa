@@ -12,6 +12,7 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   initializing: function () {
+    this.sourceRoot(path.join(__dirname, 'templates'));
     this.pkg = require('../package.json');
     this.answers = {};
   },

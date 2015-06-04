@@ -1,0 +1,36 @@
+{
+  "name": "generator-scrat-pagelet-koa",
+  "version": "0.3.0",
+  "description": "Generator for scrat project, pagelet mode && koa base",
+  "keywords": [
+    "scrat",
+    "pagelet",
+    "koa",
+    "yeoman-generator",
+    "generator",
+    "boilerplate"
+  ],
+  "author": {
+    "name": "TZ",
+    "email": "atian25@qq.com"
+  },
+  "main": "app/index.js",
+  "repository": "scrat-org/generator-scrat-pagelet-koa",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "lodash": ">=3.9.3",
+    "merge": "^1.2.0",
+    "npm-name": "^1.0.1",
+    "semver": "^4.3.1",
+    "shelljs": ">=0.5.0",
+    "yeoman-generator": ">=0.18.1",
+    "yosay": "^1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "license": "MIT"
+}

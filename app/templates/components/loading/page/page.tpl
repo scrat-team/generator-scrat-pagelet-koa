@@ -1,0 +1,1 @@
+<div style="position:fixed; width:42px; height:42px;left:50%;top: 50%; margin:-21px 0 0 -21px; z-index:10001;" class="preloader"></div>

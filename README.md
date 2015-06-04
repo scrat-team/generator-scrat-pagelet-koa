@@ -1,10 +1,3 @@
-## generator-ngfis
+## generator-scrat-pagelet-koa
 
-
-### Usage
-
-- `ngfis init`
-
-### ChangeLog
-
-- 2015-03-13 init
+Generator for scrat project, pagelet mode && koa base

@@ -1,13 +1,10 @@
-'use strict';
 var yeoman = require('yeoman-generator');
 var fs = require('fs');
 var path = require('path');
 var chalk = require('chalk');
 var yosay = require('yosay');
 var shelljs = require('shelljs');
-var semver = require('semver');
-var merge = require('merge');
-var promptHelper = require('../ask/prompt-helper');
+var promptHelper = require('../lib/promptHelper');
 
 module.exports = yeoman.generators.Base.extend({
   constructor: function () {
@@ -28,15 +25,22 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     app: function () {
-      //this.conflicter.force = this.options.force = true;
+      var templateList = ['package.json', 'README.md'];
 
-      //copy dir
-      ['components', 'server', 'views'].forEach(function (file) {
-        this.bulkDirectory(file, file);
+      //copy files
+      fs.readdirSync(this.sourceRoot()).forEach(function(file){
+        if(templateList.indexOf(file) === -1) {
+          if(file.indexOf('.') === 0){
+            //directory won't copy dot files ...
+            this.copy(file, file);
+          }else {
+            this.directory(file, file);
+          }
+        }
       }, this);
 
       //template files
-      ['package.json', 'README.md', 'Procfile'].forEach(function (file) {
+      templateList.forEach(function (file) {
         this.template(file, file, this.answers);
       }, this);
     }
@@ -51,7 +55,9 @@ module.exports = yeoman.generators.Base.extend({
 
   end: {
     git: function () {
-      shelljs.exec('git init');
+      if(this.answers['_needGit']) {
+        shelljs.exec('git init');
+      }
     },
 
     usage: function () {

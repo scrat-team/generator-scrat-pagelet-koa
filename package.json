@@ -15,7 +15,7 @@
     "email": "atian25@qq.com"
   },
   "main": "app/index.js",
-  "repository": "scrat-org/generator-scrat-pagelet-koa",
+  "repository": "https://github.comscrat-team/generator-scrat-pagelet-koa",
   "scripts": {
     "test": "mocha"
   },
